@@ -1,0 +1,2 @@
+# Define patterns to ignore during `gitops-read` and `gitops-write` operations.
+# Patterns will be applied to `local:///` files and directories.

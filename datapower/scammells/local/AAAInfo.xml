@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Licensed Materials - Property of IBM
+  IBM WebSphere DataPower Appliances
+  Copyright IBM Corporation 2007,2017. All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure
+  restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<AAAInfo xmlns="http://www.datapower.com/AAAInfo">
+  <FormatVersion>1</FormatVersion>
+  <Filename>store:///AAAInfo.xml</Filename>
+  <Summary>This is an example of the file format.</Summary>
+
+  <Authenticate>
+    <Username>fred</Username>
+    <Password>smith</Password>
+    <OutputCredential>admin</OutputCredential>
+  </Authenticate>
+
+  <Authenticate>
+    <Username>tonyf</Username>
+    <Password>tonyf</Password>
+    <OutputCredential>tonyf</OutputCredential>
+  </Authenticate>
+
+  <Authenticate>
+    <DN>CN=Alice, O=DataPower, L=Cambridge, ST=MA, C=US</DN>
+    <OutputCredential>admin</OutputCredential>
+  </Authenticate>
+
+  <Authenticate>
+    <IPHost>127.0.0.1</IPHost>
+    <OutputCredential>admin</OutputCredential>
+  </Authenticate>
+
+  <Authenticate>
+    <IPHost>::1</IPHost>
+    <OutputCredential>admin</OutputCredential>
+  </Authenticate>
+
+
+  <Authenticate>
+    <Username>Eve</Username>
+    <Password>password</Password>
+    <OutputCredential>guest</OutputCredential>
+  </Authenticate>
+
+  <Authorize>
+    <InputCredential>guest</InputCredential>
+    <InputResource>bar/.*html$</InputResource>
+    <Access>allow</Access>
+  </Authorize>
+  <Authorize>
+    <InputCredential>guest</InputCredential>
+    <InputResource>.*.cgi</InputResource>
+    <Access>deny</Access>
+  </Authorize>
+
+  <Authorize>
+    <InputCredential>admin</InputCredential>
+    <InputResource>foo/.*</InputResource>
+    <Access>allow</Access>
+  </Authorize>
+  <Authorize>
+    <InputCredential>admin</InputCredential>
+    <InputResource>.* echo</InputResource>
+    <Access>allow</Access>
+  </Authorize>
+  <Authorize>
+    <InputCredential>admin</InputCredential>
+    <InputResource>/cgi-bin/x top</InputResource>
+    <Access>allow</Access>
+  </Authorize>
+  <Authorize>
+    <InputCredential>admin</InputCredential>
+    <InputResource>.*</InputResource>
+    <Access>deny</Access>
+  </Authorize>
+  <Authorize>
+    <InputCredential><Version>3</Version><SerialNumber>0</SerialNumber><SignatureAlgorithm>sha1WithRSAEncryption</SignatureAlgorithm><Issuer>C=US, ST=MA, L=Cambridge, O=DataPower, CN=Alice</Issuer><NotBefore>2002-11-23T01:15:33Z</NotBefore><NotAfter>2012-11-23T01:15:33Z</NotAfter><Subject>C=US, ST=MA, L=Cambridge, O=DataPower, CN=Alice</Subject><SubjectPublicKeyAlgorithm>rsaEncryption</SubjectPublicKeyAlgorithm><Extensions/></InputCredential>
+    <InputResource>/* top</InputResource>
+    <Access>allow</Access>
+  </Authorize>
+
+</AAAInfo>
