@@ -1,0 +1,24 @@
+{
+  "@build":"386621",
+  "@timestamp":"Fri Oct  9 09:09:10 2026",
+  "configuration":[
+    {
+      "GitOpsTemplate":{
+        "@name":"Set-Description",
+        "mAdminState":"enabled",
+        "Templates":[
+          {
+            "TemplateType":"change",
+            "ClassName":"MultiProtocolGateway",
+            "Name":"Signing_MPGW",
+            "Field":"UserSummary",
+            "Value":"Override comments value",
+            "ValueInverse":null,
+            "ValueValidate":null
+          }
+        ],
+        "VariableRef":"gitops-variables"
+      }
+    }
+  ]
+}
